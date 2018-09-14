@@ -26,6 +26,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     const fileNode = getNode(node.parent);
     try {
       const parsedFilePath = parseFilepath(fileNode.relativePath);
+      console.log("parsedFilePath", parsedFilePath);
       if (parsedFilePath !== 'undefined') {
         const slug = `/${parsedFilePath.dir}`;
         createNodeField({ node, name: 'slug', value: slug });
@@ -172,7 +173,9 @@ exports.createPages = ({ graphql, actions }) => {
             console.log("error is ", contentful.error);
             reject(contentful.error);
           }
+
           const contentfulposts = contentful.data.allContentfulBlogPost.edges;
+          console.log(contentfulposts);
           if (contentful.data.contentfulBlogPost != null) {
             contentfulposts.unshift({ node : contentful.data.contentfulBlogPost});
           }
@@ -185,7 +188,7 @@ exports.createPages = ({ graphql, actions }) => {
               createPage: createPage,
               pageTemplate: "src/templates/blogcontentful.js",
               pageLength: 10,
-              pathPrefix: ""
+              pathPrefix: "blog"
             });
 
             const prev = index === 0 ? false : contentfulposts[index - 1].node;

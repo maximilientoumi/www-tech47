@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { Box, Flex, Tags, MainPost } from '.';
-import FaLongArrowRight from 'react-icons/lib/fa/long-arrow-right';
+import { FaLongArrowRight } from 'react-icons/fa';
 import Img from 'gatsby-image';
 import colors from '../../utils/colors';
 import styled, { css } from 'react-emotion';

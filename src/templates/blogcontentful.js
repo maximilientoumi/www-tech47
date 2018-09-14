@@ -3,7 +3,7 @@ import React from 'react';
 import Link from 'gatsby-link';
 import Typist from 'react-typist';
 import { Box, Flex, Tags, BlogPosts, SideBar } from '../components/Layout';
-import FaHeart from 'react-icons/lib/fa/heart';
+import { FaHeart } from 'react-icons/fa';
 import styled, { css } from 'react-emotion';
 import Layout from '../layouts';
 import colors from '../utils/colors';
@@ -27,6 +27,7 @@ const bgColor = css`
 const ContentfulBlogIndex = ({ data, location, pageContext }) => {
 //  const { edges: posts } = data.allMarkdownRemark;
 // The below objects are coming from gatsby-paginate
+
   const { group, index, first, last, pathPrefix } = pageContext;
   const previousUrl = index - 1 == 1 ? pathPrefix : pathPrefix + "/" + (index - 1).toString();
   const nextUrl = pathPrefix + "/" + (index + 1).toString();

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'gatsby';
 import { css } from 'emotion';
 import PropTypes from 'prop-types';
-import FaChevronDown from "react-icons/lib/fa/chevron-down";
+import { FaChevronDown }from "react-icons/fa";
 import feather from '../../utils/feather';
 import colors from '../../utils/colors';
 import MobileNav from './mobile';
@@ -45,8 +45,9 @@ const menuConfig = [
     submenu: true
   },
   { title: 'ABOUT', url: '/about', submenu: false },
-  { title: 'CONTACT', url: '/Contact', submenu: false },
-  {title:'TEAM', url:'/team', submenu: false}
+  { title: 'CONTACT', url: '/contact', submenu: false },
+  {title:'TEAM', url:'/team', submenu: false},
+  {title:'BLOG', url:'/blog', submenu:false}
 ];
 
 // In this file we have tried to place the styles as close as possible to the components
